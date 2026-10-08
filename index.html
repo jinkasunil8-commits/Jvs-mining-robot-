@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JVS Mining Robot</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: white;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 25px;
+      color: #00ff88;
+    }
+
+    .status {
+      margin: 20px;
+      padding: 15px;
+      background: #222;
+      border-radius: 12px;
+    }
+
+    .controls {
+      display: grid;
+      grid-template-columns: repeat(3, 90px);
+      gap: 15px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    button {
+      height: 70px;
+      border: none;
+      border-radius: 15px;
+      background: #333;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    button:active {
+      background: #00aa66;
+    }
+
+    .stop {
+      background: #d22;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>🤖 JVS MINING ROBOT</h1>
+
+  <div class="status">
+    Status: <b id="status">READY</b>
+  </div>
+
+  <div class="controls">
+    <div></div>
+    <button onclick="move('FORWARD')">▲<br>Forward</button>
+    <div></div>
+
+    <button onclick="move('LEFT')">◀<br>Left</button>
+    <button class="stop" onclick="move('STOP')">STOP</button>
+    <button onclick="move('RIGHT')">▶<br>Right</button>
+
+    <div></div>
+    <button onclick="move('BACKWARD')">▼<br>Backward</button>
+    <div></div>
+  </div>
+
+  <script>
+    function move(command) {
+      document.getElementById("status").innerText = command;
+      console.log("Robot command:", command);
+    }
+  </script>
+
+</body>
+</html>
